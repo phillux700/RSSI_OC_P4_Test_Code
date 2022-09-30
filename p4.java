@@ -8,8 +8,10 @@
 </head>
 <body>
 <%
+	// XSS
 	String identifiant = request.getParameter("identifiant");
 	String motDePasse = request.getParameter("motDePasse");
+
 	Class.forName("com.mysql.jdbc.Driver");
 	Connection con = (Connection)
 DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb", "root", "");
@@ -23,6 +25,11 @@ DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb", "root", "");
 	{
 		out.println("Erreur d'authentifcation pour "+identifiant);
 	}
+
+	// 1. Broken Access Control
+	// https://owasp.org/Top10/A01_2021-Broken_Access_Control/
+	//
+	//
 %>
 </body>
 </html>
