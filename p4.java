@@ -29,7 +29,6 @@ DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb", "root", "");
 	// 1. Broken Access Control
 	// https://owasp.org/Top10/A01_2021-Broken_Access_Control/
 	//
-	//
 %>
 </body>
 </html>
